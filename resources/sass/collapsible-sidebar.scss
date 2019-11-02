@@ -1,0 +1,34 @@
+$collapsed-sidebar-width: 2.75rem;
+$transition-duration: 0.4s;
+
+@import "collapsible-sidebar-trigger";
+
+.collapsible-sidebar {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  transition: width $transition-duration;
+
+  + .content {
+    max-width: calc(100vw - #{$collapsed-sidebar-width});
+  }
+
+  &-content-wrapper {
+    overflow-x: hidden;
+  }
+
+  &-content,
+  &-content > a:first-child > div {
+    transition: margin-left $transition-duration;
+  }
+
+  &.is-collapsed.is-hover-prevented,
+  &.is-collapsed:not(:hover) {
+    width: $collapsed-sidebar-width;
+
+    .collapsible-sidebar-content,
+    .collapsible-sidebar-content > a:first-child > div {
+      margin-left: -0.75rem;
+    }
+  }
+}
