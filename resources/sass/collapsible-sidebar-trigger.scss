@@ -1,0 +1,53 @@
+@import "~font-awesome/scss/font-awesome";
+
+.collapsible-sidebar-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 3rem;
+  right: -0.75rem;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  z-index: 21;
+
+  .fa {
+    font-size: 0.9rem;
+
+    &.fa-chevron-left,
+    &.fa-thumb-tack {
+      display: none;
+    }
+
+    &.fa-chevron-left {
+      margin-left: -0.125rem;
+    }
+  }
+
+  &:hover {
+    .collapsible-sidebar & .fa-bars {
+      display: none;
+    }
+
+    .collapsible-sidebar:not(.is-collapsed) & .fa-chevron-left {
+      display: inline-block;
+    }
+
+    .collapsible-sidebar.is-collapsed:not(.is-hover-prevented) & .fa-thumb-tack {
+      display: inline-block;
+    }
+  }
+
+  &.is-shy {
+    opacity: 0;
+    transition: opacity $transition-duration;
+
+    .collapsible-sidebar:hover & {
+      opacity: 1;
+    }
+  }
+}

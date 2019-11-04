@@ -1,0 +1,54 @@
+{
+    "name": "pos-lifestyle/laravel-nova-collapsible-sidebar",
+    "description": "A Laravel Nova collapsible sidebar.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "sidebar",
+        "navigation",
+        "collapsible"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Hähne",
+            "email": "jan.haehne@pos-lifestyle.de",
+            "homepage": "https://github.com/jhae-de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/pos-lifestyle/laravel-nova-collapsible-sidebar/issues"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "laravel/framework": "^5.8 || ^6.0",
+        "laravel/nova": "^2.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "PosLifestyle\\CollapsibleSidebar\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PosLifestyle\\CollapsibleSidebar\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
